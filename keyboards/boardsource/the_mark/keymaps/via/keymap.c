@@ -15,6 +15,23 @@
  */
 #include QMK_KEYBOARD_H
 
+// Runs constantly in the background, in a loop.
+void matrix_scan_user(void) {
+
+    uint8_t layer = biton32(layer_state);
+
+    // INSERT CODE HERE: turn off all leds
+
+    switch (layer) {
+	case 0:
+	    rgblight_mode(0);
+	    break;	
+        case 1:
+	    rgblight_mode(1);
+            break;
+    }
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [0] = LAYOUT_all(
