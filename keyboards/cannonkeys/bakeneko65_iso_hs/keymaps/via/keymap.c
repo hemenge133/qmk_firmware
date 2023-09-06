@@ -14,6 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+#include <sys/types.h>
 #include QMK_KEYBOARD_H
 
 
@@ -29,14 +30,13 @@ enum layer_names {
 };
 
 enum custom_keycodes {
-    MY_RELEASE = 64420,
+    MY_RELEASE = SAFE_RANGE,
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case MY_RELEASE:
       if (record->event.pressed) {
-register_code(KC_LSFT);
         register_code(KC_LSFT);
         wait_ms(50);
         unregister_code(KC_LSFT);
