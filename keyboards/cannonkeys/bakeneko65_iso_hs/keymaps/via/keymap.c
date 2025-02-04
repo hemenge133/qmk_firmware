@@ -14,7 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-// #include <sys/types.h>
+#include <sys/types.h>
 #include QMK_KEYBOARD_H
 
 
@@ -30,7 +30,7 @@ enum layer_names {
 };
 
 // enum custom_keycodes {
-//     MY_RELEASE = SAFE_RANGE+1,
+    MY_RELEASE = 64420,
 // };
 //
 // bool process_record_user(uint16_t keycode, keyrecord_t *record) {
